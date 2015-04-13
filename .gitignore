@@ -1,0 +1,7 @@
+# Emacs specific
+\#*#
+*~
+.\#*
+srct/
+.dir-locals.el
+

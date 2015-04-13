@@ -1,0 +1,41 @@
+* Scheming
+
+Set of scheme routines mostly inspired by Friedman et al.'s books:
+{little, seasoned} schemer.
+
+The purpose of this work is educational and should not be used in
+a production environment.
+
+* Modules and Tests
+
+I have tried to organize the code in modules as it grew a bit beyond
+what I first expected. You will find:
+
+- arithmetic, which comprises basic arithmetic function (designed
+  from a minimalist scheme (as prescribed by Friedman et al).
+
+- list-processing, which comprises a set of basic primitives that can
+  be used to work on lists.
+
+I have written down tests using the
+[[http://docs.racket-lang.org/rackunit/index.html?q=display] [rackunit
+testing module]] in order to make sure the functions were correct, but
+also (and mostly) to document how to run the code. You can run all the
+tests from the shell:
+
+#+BEGIN_SRC shell
+> racket -f run-tests.rkt
+running tests on 'atom.scm': 
+4 success(es) 0 failure(s) 0 error(s) 4 test(s) run
+running tests on 'arithmetic.scm': 
+33 success(es) 0 failure(s) 0 error(s) 33 test(s) run
+#+END_SRC
+
+
+or, if you want to run the tests on each module separately from the REPL:
+
+#+BEGIN_SRC racket
+(load "atom-tests.rkt")   ;;; or any other test file
+(run-tests atom-tests)    ;;; check the (provide ...) function in the *-tests file
+#+END_SRC
+
